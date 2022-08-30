@@ -1,0 +1,29 @@
+<!-- Event Binding  -->
+<button (click)="onProductAdd()">Add to Cart</button>
+
+<br />
+
+<p>{{ message }}</p>
+
+<br />
+
+<input type="text" value="myInputText" (click)="onInputClick($event)" />
+
+<br /><br />
+
+<button value="Laptop" (click)="onAddCart($event)">Laptop</button> &nbsp;
+<button value="Mobile" (click)="onAddCart($event)">Mobile</button> &nbsp;
+<button value="Television" (click)="onAddCart($event)">Television</button>
+
+<br />
+
+<p>{{ msg }}</p>
+
+<br />
+
+<!-- Template Reference Variable  -->
+<input type="text" name="UxTrendz" value="UxTrendz" #name />
+
+<button (click)="onGetInfo(name)">Get Info</button>
+
+<p>{{ info }}</p>

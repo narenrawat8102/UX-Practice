@@ -1,0 +1,18 @@
+<div class="container">
+  <button class="btn btn-success" (click)="onBlockCreated()">
+    Create Block
+  </button>
+
+  <br />
+  <br />
+
+  <div *ngIf="blockCreated; then thenBlock; else elseBlock"></div>
+
+  <ng-template #thenBlock>
+    <div>Block has been created and block name is my block</div>
+  </ng-template>
+
+  <ng-template #elseBlock>
+    <div>No block is created yet</div>
+  </ng-template>
+</div>
