@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,23 @@ import { NgIfComponent } from './components/ng-if/ng-if.component';
 import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 import { NgForComponent } from './components/ng-for/ng-for.component';
 
+// Layout Component
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
+// Pages Component
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ContactComponent } from './pages/contact/contact.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'contact', component: ContactComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +41,12 @@ import { NgForComponent } from './components/ng-for/ng-for.component';
     NgIfComponent,
     NgSwitchComponent,
     NgForComponent,
+    HomeComponent,
+    AboutComponent,
+    ProductsComponent,
+    ContactComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +54,7 @@ import { NgForComponent } from './components/ng-for/ng-for.component';
     FormsModule,
     BrowserAnimationsModule,
     // HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent],

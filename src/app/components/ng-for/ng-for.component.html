@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row justify-content-center p-3">
     <div class="col-lg-8">
       <table class="table">
@@ -20,6 +20,50 @@
             <td>{{ product.id }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
+
+<!-- Push and Splice Method in Array  -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <input type="text" class="form-control" placeholder="User Name" #user />
+      <br />
+      <button class="btn btn-success" (click)="onAddUser(user)">
+        Create User
+      </button>
+
+      &nbsp;
+
+      <button class="btn btn-danger" (click)="onRemoveUser()">
+        Remove User
+      </button>
+    </div>
+
+    <div class="col-lg-6">
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Sr. No.</th>
+            <th scope="col">User ID</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; index as i">
+            <th scope="row"># {{ i + 1 }}</th>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="onDeleteUser(i)">
+                Delete
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
