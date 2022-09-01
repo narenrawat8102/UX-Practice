@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ng-for',
@@ -35,7 +36,7 @@ export class NgForComponent implements OnInit {
 
   users = [{ id: '01', name: 'Naren' }];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -44,6 +45,10 @@ export class NgForComponent implements OnInit {
       id: '02',
       name: user.value,
     });
+
+    if (this.users.length > 3) {
+      this.router.navigate(['products']);
+    }
   }
 
   onRemoveUser() {
