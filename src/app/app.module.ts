@@ -37,7 +37,6 @@ import { MobileComponent } from './pages/products/mobile/mobile.component';
 import { TelevisionComponent } from './pages/products/television/television.component';
 import { WashingMachineComponent } from './pages/products/washing-machine/washing-machine.component';
 
-
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },

@@ -1,1 +1,101 @@
-<p>parent works!</p>
+<div class="container my-3 p-3">
+  <h2 class="text-success text-center mb-4">Buy Products</h2>
+
+  <div
+    *ngIf="itemSentToCart"
+    class="alert alert-light border d-flex align-items-center"
+  >
+    <strong class="text-success">{{ itemSentToCart }} </strong> &nbsp; is
+    Selected and Added in Cart
+    <button class="btn btn-success ms-auto">Checkout</button>
+  </div>
+
+  <hr />
+
+  <div class="row text-center">
+    <!-- Mobile  -->
+    <div class="col-lg-3">
+      <div class="card">
+        <img
+          src="../../../assets/ngFor-images/mobile.jpeg"
+          class="card-img-top"
+          style="width: 100%; height: 250px"
+          alt="Mobile Image"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Mobile</h5>
+          <button class="btn btn-success" (click)="onProductSelect('Mobile')">
+            Select This Product
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laptop  -->
+    <div class="col-lg-3">
+      <div class="card">
+        <img
+          src="../../../assets/ngFor-images/laptop.jpg"
+          class="card-img-top"
+          style="width: 100%; height: 250px"
+          alt="Laptop Image"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Laptop</h5>
+          <button class="btn btn-success" (click)="onProductSelect('Laptop')">
+            Select This Product
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Television  -->
+    <div class="col-lg-3">
+      <div class="card">
+        <img
+          src="../../../assets/ngFor-images/tv.jpeg"
+          class="card-img-top"
+          style="width: 100%; height: 250px"
+          alt="Television Image"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Television</h5>
+          <button
+            class="btn btn-success"
+            (click)="onProductSelect('Television')"
+          >
+            Select This Product
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Washing Machine  -->
+    <div class="col-lg-3">
+      <div class="card">
+        <img
+          src="../../../assets/ngFor-images/wm.jpeg"
+          class="card-img-top"
+          style="width: 100%; height: 250px"
+          alt="Washing Machine Image"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Washing Machine</h5>
+          <button
+            class="btn btn-success"
+            (click)="onProductSelect('Washing Machine')"
+          >
+            Select This Product
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Select Product Div  -->
+  <app-child
+    [product]="productChoosed"
+    [isProductSelected]="isProductChoosed"
+    (itemToSend)="sendToCart($event)"
+  ></app-child>
+</div>
