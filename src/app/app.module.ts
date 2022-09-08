@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-// import { HttpClientModule } from './angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 // All Components
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { NgForComponent } from './components/ng-for/ng-for.component';
 import { CardComponent } from './components/card/card.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { ServiceUseComponent } from './components/service-use/service-use.component';
 
 // Layout Component
 import { HeaderComponent } from './layout/header/header.component';
@@ -37,6 +38,10 @@ import { MobileComponent } from './pages/products/mobile/mobile.component';
 import { TelevisionComponent } from './pages/products/television/television.component';
 import { WashingMachineComponent } from './pages/products/washing-machine/washing-machine.component';
 
+// Services
+import { MessageService } from './appServices/message.service';
+import { TestDirective } from './appDirectives/test.directive';
+
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -54,6 +59,7 @@ const appRoutes: Routes = [
   },
   { path: 'buy-product', component: ParentComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'serviceUse', component: ServiceUseComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -80,16 +86,18 @@ const appRoutes: Routes = [
     CardComponent,
     ParentComponent,
     ChildComponent,
+    ServiceUseComponent,
+    TestDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    // HttpClientModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

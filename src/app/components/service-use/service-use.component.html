@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row my-3 py-3">
+    <div class="col-lg-6">
+      <h4>Products</h4>
+      <ng-container *ngFor="let product of products">
+        Product Name:
+        <strong class="text-success">{{ product.name }}</strong> &nbsp; Product
+        Id: <strong class="text-success">{{ product.id }}</strong>
+        <br />
+      </ng-container>
+    </div>
+
+    <div class="col-lg-6">
+      <h4>Users</h4>
+      <ng-container *ngFor="let user of users">
+        User Name:
+        <strong class="text-success">{{ user.name }}</strong> &nbsp; User Id:
+        <strong class="text-success">{{ user.id }}</strong>
+        <br />
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="row border my-3">
+    <div class="col-lg-6 py-3" #box>
+      <h6 class="my-2">Vew Child</h6>
+      <h3 class="my-2">My Name is Narender Rawat</h3>
+    </div>
+
+    <div class="col-lg-6 py-3" appTest>
+      <h6 class="my-2">Directive with Renderer</h6>
+      <h3 class="my-2">My Name is Virat Rawat</h3>
+      <button class="btn btn-danger me-2" (click)="changeColor('red')">
+        Red
+      </button>
+      <button class="btn btn-success" (click)="changeColor('green')">
+        Green
+      </button>
+    </div>
+  </div>
+</div>

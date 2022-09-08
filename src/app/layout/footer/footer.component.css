@@ -1,0 +1,9 @@
+.foot {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.foot h4 {
+  color: red;
+}
